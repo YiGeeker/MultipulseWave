@@ -8,7 +8,7 @@ typedef enum
 	AddSelect,					/* 增加当前选择值 */
 	SubSelect,					/* 减少当前选择值 */
 	TransmitOn,					/* 开始发射 */
-	TransmitOff,				/* 发射关闭 */
+	TransmitOff,					/* 发射关闭 */
 	None						/* 没有消息处理 */
 }MESSAGE;						/* 当前消息可能值 */
 

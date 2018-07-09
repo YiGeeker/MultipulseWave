@@ -1,10 +1,10 @@
-#! python
+#! python3
 import os
 import subprocess
 from waflib import Configure
 
 VERSION = '1.0.0'
-APPNAME = 'TrapezoidWave'
+APPNAME = 'MultipulseWave'
 
 top = '.'
 out = 'build'
@@ -37,12 +37,12 @@ def configure(cnf):
 
     if cnf.options.generate_cdb:
         cnf.load('clang_compilation_database')
-        cnf.env.append_value('CFLAGS', ['-isystem', 'd:/GNU/gcc-arm-none-eabi/arm-none-eabi/include'])
+        # cnf.env.append_value('CFLAGS', ['-isystem', 'd:/GNU/gcc-arm-none-eabi/arm-none-eabi/include'])
         print("compile_commands.json will be generated.")
 
 
 def build(bld):
-    StdRoot = 'e:/Programming/STM32/stsw-stm32054'
+    StdRoot = os.path.expanduser('~/Documents/Programming/STM32/STM32F10x_StdPeriph_Lib_V3.5.0/Libraries')
     CoreSupport = StdRoot+'/CMSIS/CM3/CoreSupport'
     DeviceSupport = StdRoot+'/CMSIS/CM3/DeviceSupport/ST/STM32F10x'
     Periph = StdRoot+'/STM32F10x_StdPeriph_Driver'
